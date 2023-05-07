@@ -6,10 +6,11 @@ WORKDIR /app
 # Copy requirements file and install dependencies
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the project files
-COPY ./app /app
+COPY . .
+
 # Expose the server port
 EXPOSE 8080
 
